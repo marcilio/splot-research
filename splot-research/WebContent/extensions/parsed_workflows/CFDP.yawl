@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specificationSet xmlns="http://www.yawlfoundation.org/yawlschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemaLocation="http://www.yawlfoundation.org/yawlschema http://www.yawlfoundation.org/yawlschema/YAWL_Schema2.1.xsd">
+  <specification uri="CFDP">
+    <metaData>
+      <creator>ebrahimkhalilabbasi</creator>
+      <description>No description has been given.</description>
+      <version>0.12</version>
+      <persistent>false</persistent>
+      <identifier>UID_65f733bc-aad0-4e1a-be3d-332171c0ebae</identifier>
+    </metaData>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" />
+    <decomposition id="Main_Net" isRootNet="true" xsi:type="NetFactsType">
+      <processControlElements>
+        <inputCondition id="InputCondition_1">
+          <flowsInto>
+            <nextElementRef id="Spacebel_3" />
+          </flowsInto>
+        </inputCondition>
+        <task id="Spacebel_3">
+          <name>Spacebel</name>
+          <flowsInto>
+            <nextElementRef id="Reseller_4" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="System_Engineer_5" />
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8080/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="Spacebel" />
+        </task>
+        <task id="System_Engineer_5">
+          <name>System_Engineer</name>
+          <flowsInto>
+            <nextElementRef id="Network_Integrator_6" />
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="TMTC_Integrator_7" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8060/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="System_Engineer" />
+        </task>
+        <task id="Reseller_4">
+          <name>Reseller</name>
+          <flowsInto>
+            <nextElementRef id="System_Engineer_5" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8080/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="Reseller" />
+        </task>
+        <task id="TMTC_Integrator_7">
+          <name>TMTC_Integrator</name>
+          <flowsInto>
+            <nextElementRef id="Loop_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8060/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="TMTC_Integrator" />
+        </task>
+        <task id="Network_Integrator_6">
+          <name>Network_Integrator</name>
+          <flowsInto>
+            <nextElementRef id="Loop_8" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8060/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="Network_Integrator" />
+        </task>
+        <task id="Loop_8">
+          <name>Loop</name>
+          <flowsInto>
+            <nextElementRef id="Final_Satellite_21" />
+            <predicate ordering="0">true()</predicate>
+          </flowsInto>
+          <flowsInto>
+            <nextElementRef id="System_Engineer_5" />
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="and" />
+          <split code="xor" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8060/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="Loop" />
+        </task>
+        <condition id="Final_Satellite_21">
+          <name>Final_Satellite</name>
+          <flowsInto>
+            <nextElementRef id="Final_Satellite_22" />
+          </flowsInto>
+        </condition>
+        <task id="Final_Satellite_22">
+          <name>Final_Satellite</name>
+          <flowsInto>
+            <nextElementRef id="Product_Release_24" />
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8060/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="Final_Satellite" />
+        </task>
+        <task id="Product_Release_24">
+          <name>Product_Release</name>
+          <flowsInto>
+            <nextElementRef id="Final_Stop_25" />
+          </flowsInto>
+          <join code="xor" />
+          <split code="and" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8060/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="Product_Release" />
+        </task>
+        <condition id="Final_Stop_25">
+          <name>Final_Stop</name>
+          <flowsInto>
+            <nextElementRef id="Final_Stop_26" />
+          </flowsInto>
+        </condition>
+        <task id="Final_Stop_26">
+          <name>Final_Stop</name>
+          <flowsInto>
+            <nextElementRef id="OutputCondition_2" />
+            <isDefaultFlow />
+          </flowsInto>
+          <join code="xor" />
+          <split code="xor" />
+          <resourcing>
+            <offer initiator="system">
+              <distributionSet>
+                <initialSet />
+              </distributionSet>
+            </offer>
+            <allocate initiator="user" />
+            <start initiator="user" />
+            <privileges>
+              <privilege>
+                <name>canSuspend</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateless</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canReallocateStateful</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDeallocate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canDelegate</name>
+                <allowall>true</allowall>
+              </privilege>
+              <privilege>
+                <name>canSkip</name>
+                <allowall>true</allowall>
+              </privilege>
+            </privileges>
+          </resourcing>
+          <customForm>http://localhost:8060/FeatureConfigurationWorkflowService/FeatureConfigurationWorkflowServlet?action=prepare_configuration_process</customForm>
+          <decomposesTo id="Final_Stop" />
+        </task>
+        <outputCondition id="OutputCondition_2" />
+      </processControlElements>
+    </decomposition>
+    <decomposition id="Final_Stop" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+    <decomposition id="Reseller" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+    <decomposition id="System_Engineer" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+    <decomposition id="Product_Release" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+    <decomposition id="TMTC_Integrator" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+    <decomposition id="Spacebel" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+    <decomposition id="Final_Satellite" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+    <decomposition id="Loop" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+    <decomposition id="Network_Integrator" xsi:type="WebServiceGatewayFactsType">
+      <externalInteraction>manual</externalInteraction>
+    </decomposition>
+  </specification>
+  <layout>
+    <locale language="en" country="US" />
+    <specification id="CFDP">
+      <size w="123" h="46" />
+      <net id="Main_Net">
+        <bounds x="0" y="0" w="1094" h="529" />
+        <frame x="11" y="33" w="1098" h="533" />
+        <viewport x="0" y="0" w="1098" h="533" />
+        <vertex id="InputCondition_1">
+          <attributes>
+            <bounds x="0.0" y="136.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <vertex id="OutputCondition_2">
+          <attributes>
+            <bounds x="1028.0" y="136.0" w="32.0" h="32.0" />
+          </attributes>
+        </vertex>
+        <container id="Product_Release_24">
+          <vertex>
+            <attributes>
+              <bounds x="776.0" y="136.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="736.0" y="168.0" w="116.0" h="19.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Network_Integrator_6">
+          <vertex>
+            <attributes>
+              <bounds x="368.0" y="76.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="316.0" y="108.0" w="141.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Spacebel_3">
+          <vertex>
+            <attributes>
+              <bounds x="52.0" y="136.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="24.0" y="168.0" w="96.0" h="19.0" />
+            </attributes>
+          </label>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="83.0" y="136.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <container id="Final_Stop_26">
+          <vertex>
+            <attributes>
+              <bounds x="956.0" y="136.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="928.0" y="168.0" w="96.0" h="19.0" />
+            </attributes>
+          </label>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="987.0" y="136.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <container id="Loop_8">
+          <vertex>
+            <attributes>
+              <bounds x="476.0" y="136.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="444.0" y="168.0" w="96.0" h="19.0" />
+            </attributes>
+          </label>
+          <decorator type="AND_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="466.0" y="136.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="507.0" y="136.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <container id="TMTC_Integrator_7">
+          <vertex>
+            <attributes>
+              <bounds x="370.0" y="200.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="328.0" y="232.0" w="121.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Final_Satellite_22">
+          <vertex>
+            <attributes>
+              <bounds x="648.0" y="136.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="620.0" y="168.0" w="97.0" h="19.0" />
+            </attributes>
+          </label>
+          <decorator type="XOR_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="679.0" y="136.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <container id="System_Engineer_5">
+          <vertex>
+            <attributes>
+              <bounds x="252.0" y="136.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="208.0" y="168.0" w="121.0" h="19.0" />
+            </attributes>
+          </label>
+          <decorator type="XOR_join">
+            <position>12</position>
+            <attributes>
+              <bounds x="242.0" y="136.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+          <decorator type="AND_split">
+            <position>13</position>
+            <attributes>
+              <bounds x="283.0" y="136.0" w="11.0" h="32.0" />
+              <size w="11" h="32" />
+            </attributes>
+          </decorator>
+        </container>
+        <container id="Reseller_4">
+          <vertex>
+            <attributes>
+              <bounds x="152.0" y="72.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="120.0" y="104.0" w="97.0" h="21.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Final_Satellite_21">
+          <vertex>
+            <attributes>
+              <bounds x="552.0" y="136.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="520.0" y="168.0" w="97.0" h="19.0" />
+            </attributes>
+          </label>
+        </container>
+        <container id="Final_Stop_25">
+          <vertex>
+            <attributes>
+              <bounds x="880.0" y="136.0" w="32.0" h="32.0" />
+            </attributes>
+          </vertex>
+          <label>
+            <attributes>
+              <bounds x="848.0" y="168.0" w="96.0" h="19.0" />
+            </attributes>
+          </label>
+        </container>
+        <flow source="InputCondition_1" target="Spacebel_3">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="31.0" y="151.5" />
+              <value x="52.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Final_Satellite_21" target="Final_Satellite_22">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="583.0" y="151.5" />
+              <value x="648.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Product_Release_24" target="Final_Stop_25">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Final_Stop_25" target="Final_Stop_26">
+          <ports in="13" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Loop_8" target="Final_Satellite_21">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="517.0" y="151.5" />
+              <value x="552.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Final_Stop_26" target="OutputCondition_2">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+          </attributes>
+        </flow>
+        <flow source="Spacebel_3" target="Reseller_4">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="93.0" y="151.5" />
+              <value x="116.0" y="88.0" />
+              <value x="152.0" y="87.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Reseller_4" target="System_Engineer_5">
+          <ports in="13" out="3" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="183.0" y="87.5" />
+              <value x="212.0" y="88.0" />
+              <value x="242.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Spacebel_3" target="System_Engineer_5">
+          <ports in="2" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="93.0" y="151.5" />
+              <value x="242.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="TMTC_Integrator_7" target="Loop_8">
+          <ports in="13" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="401.0" y="215.5" />
+              <value x="456.0" y="216.0" />
+              <value x="466.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Final_Satellite_22" target="Product_Release_24">
+          <ports in="2" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="689.0" y="151.5" />
+              <value x="760.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Network_Integrator_6" target="Loop_8">
+          <ports in="13" out="2" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="399.0" y="91.5" />
+              <value x="456.0" y="92.0" />
+              <value x="466.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="Loop_8" target="System_Engineer_5">
+          <ports in="2" out="3" />
+          <attributes>
+            <lineStyle>12</lineStyle>
+            <points>
+              <value x="517.0" y="151.5" />
+              <value x="532.0" y="80.0" />
+              <value x="228.0" y="84.0" />
+              <value x="242.0" y="151.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="System_Engineer_5" target="TMTC_Integrator_7">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="293.0" y="151.5" />
+              <value x="312.0" y="216.0" />
+              <value x="370.0" y="215.5" />
+            </points>
+          </attributes>
+        </flow>
+        <flow source="System_Engineer_5" target="Network_Integrator_6">
+          <ports in="3" out="12" />
+          <attributes>
+            <lineStyle>11</lineStyle>
+            <points>
+              <value x="293.0" y="151.5" />
+              <value x="312.0" y="92.0" />
+              <value x="368.0" y="91.5" />
+            </points>
+          </attributes>
+        </flow>
+      </net>
+    </specification>
+  </layout>
+</specificationSet>
+
+
